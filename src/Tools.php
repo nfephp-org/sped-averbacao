@@ -81,33 +81,36 @@ class Tools extends ToolsCommon
         }
         switch($cTipo) {
             case 'CTE':
-                $cTag = 'averbaCTe';
+                $cTagAction = 'averbaCTe';
+                $cTagXml = 'xmlCTe';
                 $this->cAction = 'urn:ATMWebSvr#averbaCTe';
                 break;
             case 'MDFE':
-                $cTag = 'averbaMDFe';
+                $cTagAction = 'declaraMDFe';
+                $cTagXml = 'xmlMDFe';
                 $this->cAction = 'urn:ATMWebSvr#declaraMDFe';
                 break;
             case 'NFE':
-                $cTag = 'averbaNFe';
-                $this->cAction = 'urn:ATMWebSvr#declaraNFe';
+                $cTagAction = 'averbaNFe';
+                $cTagXml = 'xmlNFe';
+                $this->cAction = 'urn:ATMWebSvr#averbaNFe';
                 break;
             default:
 				throw new \InvalidArgumentException('O tipo do XML foi informado errado.');
         }
         if ($this->tpAmb == 1) {
             $this->cUrl = 'http://webserver.averba.com.br/20/index.soap?wsdl';
-            $this->cHost = 'ws.averba.com.br';
+            $this->cHost = 'webserver.averba.com.br';
         } else {
             $this->cUrl = 'http://homologaws.averba.com.br/20/index.soap?wsdl';
             $this->cHost = 'homologaws.averba.com.br';
         }
-        $request = "<$cTag>"
+        $request = "<$cTagAction>"
             . "<usuario>$this->cUsuario</usuario>"
             . "<senha>$this->cSenha</senha>"
             . "<codatm>$this->cCodigo</codatm>"
-            . "<xmlCTe><![CDATA[$cXml]]></xmlCTe>"
-            . "</$cTag>";
+            . "<$cTagXml><![CDATA[$cXml]]></$cTagXml>"
+            . "</$cTagAction>";
         $request = Strings::clearXmlString($request, true);
         $cXmlSoap     = '<?xml version="1.0" encoding="utf-8"?>';
         $cXmlSoap    .= '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
