@@ -18,9 +18,8 @@
         }
     ],
     "require": {
-        "php" : ">=5.6",
-        "nfephp-org/sped-common" : "^5.0",
-        "justinrainbow/json-schema": "^5.2"
+        "php" : ">=7.1",
+        "nfephp-org/sped-common" : "^5.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^2.8",
@@ -32,6 +31,11 @@
         "psr-4": {
           "NFePHP\\Averbacao\\": "src/"
         } 
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NFePHP\\Averbacao\\Tests\\": "tests/"
+        }
     },
     "scripts": {
         "test": "phpunit",
