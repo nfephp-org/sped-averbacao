@@ -6,7 +6,11 @@ Framework para comunicação e averbação dos CTes, MDFes e NFes com as segurad
 
 ## Seguradoras Atendidas
 
-Nesta primeira versão estamos atendendo a AT&M, mas iremos também atender a Porto Seguro. Caso alguém tenha outras necessidades favor entrar em contato.
+- AT&M
+
+- Porto Seguro (em testes ALPHA, o envio ainda não foi testado)
+
+*Caso alguém tenha outras necessidades favor entrar em contato.*
 
 ## Objetivo
 

@@ -4,7 +4,7 @@ ini_set('display_errors', 'On');
 
 require_once '../bootstrap.php';
 
-use NFePHP\Averbacao\Tools;
+use NFePHP\Averbacao\Atm;
 use NFePHP\Averbacao\Common\Standardize;
 
 $chave = 'xml';
@@ -30,9 +30,9 @@ $tpAmb = 2;
  */
 $cTipo = 'CTE';
 
-$tools = new NFePHP\Averbacao\Tools($cUsuario,$cSenha,$cCodigo,$tpAmb);
+$atm = new Atm($cUsuario,$cSenha,$cCodigo,$tpAmb);
 
-$response = $tools->sefazAverbaXml($cXml,$cTipo);
+$response = $atm->averbaXml($cXml,$cTipo);
 
 $stdCl = new Standardize($response);
 $arr = $stdCl->toArray();

@@ -2,24 +2,11 @@
 
 namespace NFePHP\Averbacao\Common;
 
-/**
- * Class base responsible for communication with SEFAZ
- *
- * @category  NFePHP
- * @package   NFePHP\Averbacao\Common\Tools
- * @copyright NFePHP Copyright (c) 2008-2019
- * @license   http://www.gnu.org/licenses/lgpl.txt LGPLv3+
- * @license   https://opensource.org/licenses/MIT MIT
- * @license   http://www.gnu.org/licenses/gpl.txt GPLv3+
- * @author    Roberto L. Machado <linux.rlm at gmail dot com>
- * @link      http://github.com/nfephp-org/sped-nfe for the canonical source repository
- */
-
 use DOMDocument;
 use InvalidArgumentException;
 use RuntimeException;
 use NFePHP\Common\Signer;
-use NFePHP\Averbacao\Common\Soap\SoapCurl ;
+use NFePHP\Averbacao\Common\Soap\SoapCurl;
 use NFePHP\Common\Strings;
 
 class Tools
