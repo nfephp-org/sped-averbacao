@@ -15,8 +15,9 @@ try {
     $averb = new Porto($user, $pass);
     $averb->login();
     $response = $averb->send($filecontent);
+    $std = json_decode($response);
     echo "<pre>";
-    print_r($response);
+    print_r($std);
     echo "</pre>";
 } catch (\Exception $e) {
      echo "Ocorreu um erro: {$e->message}.";
