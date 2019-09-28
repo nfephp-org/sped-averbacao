@@ -14,7 +14,7 @@ $filecontent = file_get_contents('cte.xml');
 try {
     $response = $averb->sendStatic($user, $pass, $filecontent);
     echo "<pre>";
-    print_r($response);
+    print_r($std);
     echo "</pre>";
 } catch (\Exception $e) {
      echo "Ocorreu um erro: {$e->message}.";

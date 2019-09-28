@@ -7,7 +7,7 @@ use \CURLFile;
 class Porto
 {
     public $debug = '';
-    
+    protected $cc;
     protected $user;
     protected $pass;
     protected $cockie;
@@ -196,6 +196,8 @@ class Porto
         if (!$this->logged) {
             $this->cockie = tempnam(sys_get_temp_dir(), 'porto_');
             curl_setopt($oCurl, CURLOPT_COOKIEJAR, $this->cockie);
+            curl_setopt($oCurl, CURLOPT_COOKIEFILE, $this->cockie);
+        } else {
             curl_setopt($oCurl, CURLOPT_COOKIEFILE, $this->cockie);
         }
         curl_setopt($oCurl, CURLOPT_POST, true);
