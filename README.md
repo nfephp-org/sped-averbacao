@@ -4,6 +4,22 @@ Framework para comunicação e averbação dos CTes, MDFes e NFes com as segurad
 
 *sped-averbacao é um framework para comunicação e averbação dos CTes, MDFes e NFes com as seguradoras.*
 
+
+[![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
+[![Quality Score][ico-code-quality]][link-code-quality]
+
+[![Latest Stable Version][ico-stable]][link-packagist]
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![License][ico-license]][link-packagist]
+[![Total Downloads][ico-downloads]][link-downloads]
+
+[![Issues][ico-issues]][link-issues]
+[![Forks][ico-forks]][link-forks]
+[![Stars][ico-stars]][link-stars]
+
+
+
 ## Seguradoras Atendidas
 
 - AT&M
@@ -36,9 +52,9 @@ Para contribuir por favor observe o [CONTRIBUTING](CONTRIBUTING.md) e o  [Códig
 
 ## Desenvolvimento
 
-Para todo o desenvolvimento, correções de bugs, inclusões e testes deverá ser usada branch `develop`. 
+Para todo o desenvolvimento, correções de bugs, inclusões e testes deverá ser usada branch `develop`.
 Na branch `master`estarão os códigos considerados como estáveis.
-Novas branches poderão surgir em função das necessidades que se apresentarem, seja para manter versionamentos anteriores seja para estabelecer correções de bugs. Mas apenas essas duas branches estabelecidas é que serão permanentente mantidas. 
+Novas branches poderão surgir em função das necessidades que se apresentarem, seja para manter versionamentos anteriores seja para estabelecer correções de bugs. Mas apenas essas duas branches estabelecidas é que serão permanentente mantidas.
 
 ## Pull Request
 
@@ -58,3 +74,27 @@ Caso você encontre algum problema relativo a segurança, por favor envie um ema
 
 Este pacote está diponibilizado sob GPLv3 ou LGPLv3 ou MIT License (MIT). Leia  [Arquivo de Licença](LICENSE.md) para maiores informações.
 
+
+[ico-stable]: https://poser.pugx.org/nfephp-org/sped-averbacao/version
+[ico-stars]: https://img.shields.io/github/stars/nfephp-org/sped-averbacao.svg?style=flat-square
+[ico-forks]: https://img.shields.io/github/forks/nfephp-org/sped-averbacao.svg?style=flat-square
+[ico-issues]: https://img.shields.io/github/issues/nfephp-org/sped-averbacao.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/nfephp-org/sped-averbacao/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/nfephp-org/sped-averbacao.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/nfephp-org/sped-averbacao.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/nfephp-org/sped-averbacao.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/nfephp-org/sped-averbacao.svg?style=flat-square
+[ico-license]: https://poser.pugx.org/nfephp-org/nfephp/license.svg?style=flat-square
+
+
+
+[link-packagist]: https://packagist.org/packages/nfephp-org/sped-averbacao
+[link-travis]: https://travis-ci.org/nfephp-org/sped-averbacao
+[link-scrutinizer]: https://scrutinizer-ci.com/g/nfephp-org/sped-averbacao/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/nfephp-org/sped-averbacao
+[link-downloads]: https://packagist.org/packages/nfephp-org/sped-averbacao
+[link-author]: https://github.com/nfephp-org
+[link-issues]: https://github.com/nfephp-org/sped-averbacao/issues
+[link-forks]: https://github.com/nfephp-org/sped-averbacao/network
+[link-stars]: https://github.com/nfephp-org/sped-averbacao/stargazers
+[link-gitter]: https://gitter.im/nfephp-org/sped-averbacao?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
