@@ -1,5 +1,5 @@
 /vendor
 /nbproject
 /local
-composer.lock
+./composer.lock
 /.idea

@@ -1,5 +1,5 @@
 {
-    "name": "nfephp-org/sped-averbacao",    
+    "name": "nfephp-org/sped-averbacao",
     "type": "library",
     "description": "API para comunicação e Averbação dos CTes, MDFes e NFes com as Seguradoras.",
     "keywords": ["averbacao", "sped", "nfephp"],
@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "php" : ">=7.1",
+        "php" : ">=7.0",
         "nfephp-org/sped-common" : "^5.0"
     },
     "require-dev": {
@@ -30,7 +30,7 @@
     "autoload": {
         "psr-4": {
           "NFePHP\\Averbacao\\": "src/"
-        } 
+        }
     },
     "autoload-dev": {
         "psr-4": {
