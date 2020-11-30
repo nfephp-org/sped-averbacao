@@ -28,7 +28,7 @@ class Tools
      * @var SoapInterface
      */
     public $soap;
-    
+    	
     /**
      * Send request message to webservice
      * @param array $parameters
@@ -53,4 +53,14 @@ class Tools
             $this->soap = new SoapCurl();
         }
     }
+
+    protected function sendRequestELTSEG($cUrl,$cXml)
+    {
+        $this->soap = new SoapCurl();
+        return (string) $this->soap->sendELTSEG(
+            $cUrl,
+            $cXml
+        );
+    }
+
 }

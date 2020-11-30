@@ -25,7 +25,8 @@ class Standardize
      * @var array
      */
     public $rootTagList = [
-        'Response'
+        'Response',
+        'FileUploadXMLResult'
     ];
     
     /**
