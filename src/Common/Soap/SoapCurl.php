@@ -83,4 +83,42 @@ class SoapCurl
         }
         return $this->responseBody;
     }
+    
+    /**
+     * Send soap message to url
+     * @param string $cUrl
+     * @param string $cXml
+     * @throws \NFePHP\Common\Exception\SoapException
+     */
+    public function sendELTSEG(
+        $cUrl = '',
+        $cXml = ''
+    ) {
+        try {
+
+			$oCurl = curl_init($cUrl);
+			curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, true);
+			// Iremos usar o método POST
+			curl_setopt($oCurl, CURLOPT_POST, true);
+			// Definimos quais informações serão enviadas pelo POST (array)
+			curl_setopt($oCurl, CURLOPT_POSTFIELDS, $cXml);
+			$response = curl_exec($oCurl);
+            $this->soaperror = curl_error($oCurl);
+            $ainfo = curl_getinfo($oCurl, CURLINFO_HTTP_CODE);
+            if (is_array($ainfo)) {
+                $this->soapinfo = $ainfo;
+            }
+            curl_close($oCurl);
+            $response = str_replace('a:', '' , $response);
+            $this->responseBody = trim($response);
+			file_put_contents( 'response.xml', $response );
+
+        } catch (\Exception $e) {
+            throw SoapException::unableToLoadCurl($e->getMessage());
+        }
+        if ($this->soaperror != '') {
+            throw SoapException::soapFault($this->soaperror . " [$cUrl]");
+        }
+        return $this->responseBody;
+    }
 }

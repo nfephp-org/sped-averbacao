@@ -22,9 +22,12 @@ Framework para comunicação e averbação dos CTes, MDFes e NFes com as segurad
 
 ## Seguradoras Atendidas
 
-- AT&M
+- AT&M ( em produção )
+
+- ELTSEG ( em produção )
 
 - Porto Seguro (em testes ALPHA, o envio ainda não foi testado)
+
 
 *Caso alguém tenha outras necessidades favor entrar em contato.*
 
