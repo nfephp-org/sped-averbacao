@@ -2,33 +2,37 @@
 
 namespace NFePHP\Averbacao\Common;
 
-use DOMDocument;
-use InvalidArgumentException;
-use RuntimeException;
-use NFePHP\Common\Signer;
 use NFePHP\Averbacao\Common\Soap\SoapCurl;
-use NFePHP\Common\Strings;
+use NFePHP\Common\Soap\SoapInterface;
 
 class Tools
 {
     /**
      * @var string
      */
-    public $cAction ;
+    public $cAction;
     /**
      * @var string
      */
-    public $cUrl ;
+    public $cUrl;
     /**
      * @var string
      */
-    public $cHost ;
+    public $cHost;
     /**
      * soap class
      * @var SoapInterface
      */
     public $soap;
-    	
+    /**
+     * @var string
+     */
+    public $lastRequest;
+    /**
+     * @var string
+     */
+    public $lastResponse;
+
     /**
      * Send request message to webservice
      * @param array $parameters
@@ -38,7 +42,7 @@ class Tools
     protected function sendRequest($request)
     {
         $this->checkSoap();
-        return (string) $this->soap->send(
+        return (string)$this->soap->send(
             $this->cUrl,
             $request,
             $this->cAction,
@@ -54,10 +58,10 @@ class Tools
         }
     }
 
-    protected function sendRequestELTSEG($cUrl,$cXml)
+    protected function sendRequestELTSEG($cUrl, $cXml)
     {
         $this->soap = new SoapCurl();
-        return (string) $this->soap->sendELTSEG(
+        return (string)$this->soap->sendELTSEG(
             $cUrl,
             $cXml
         );

@@ -2,8 +2,6 @@
 
 namespace NFePHP\Averbacao;
 
-use \CURLFile;
-
 class Porto
 {
     public $debug = '';
@@ -15,18 +13,18 @@ class Porto
     protected $logged = false;
     protected $useragent = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.2) Gecko/20100101 Firefox/10.0.2';
     protected $url = 'https://www.averbeporto.com.br/websys/php/conn.php';
-    
+
     /**
      * Construct
-     * @param type $user
-     * @param type $pass
+     * @param string $user
+     * @param string $pass
      */
     public function __construct($user = null, $pass = null)
     {
         $this->user = $user ?? null;
         $this->pass = $pass ?? null;
     }
-    
+
     /**
      * clear files
      */
@@ -36,7 +34,7 @@ class Porto
             unlink($this->cockie);
         }
     }
-    
+
     /**
      * Set environment variable to tests in webservice
      * @param int $env
@@ -49,7 +47,7 @@ class Porto
         }
         return $this->environment;
     }
-    
+
     /**
      * Login with webservice
      * @param string $user
@@ -65,7 +63,7 @@ class Porto
             return false;
         }
         $post = [
-            'mod'=> 'login',
+            'mod' => 'login',
             'comp' => '5',
             'user' => $this->user,
             'pass' => $this->pass,
@@ -83,7 +81,7 @@ class Porto
         }
         return $this->logged;
     }
-    
+
     /**
      * Send a file for insurance registration
      * @param string $filecontent
@@ -97,15 +95,13 @@ class Porto
         if (!$this->logged) {
             return false;
         }
-        
         $post = [
-            'mod'=> 'Upload',
+            'mod' => 'Upload',
             'comp' => '5',
-            'path'   => 'eguarda/php/',
+            'path' => 'eguarda/php/',
             'cookie' => $this->cockie,
             'recipient' => ''
         ];
-        
         if ($this->environment != null) {
             $post['dump'] = $this->environment;
         }
@@ -116,7 +112,7 @@ class Porto
         $response = $this->conn($post);
         return $response;
     }
-    
+
     /**
      * Send a consultation for get ANTT protocol using key
      * @param string $chave
@@ -147,7 +143,7 @@ class Porto
         $response = $this->conn($post);
         return $response;
     }
-    
+
     /**
      * Send a file for insurance registration
      * @param string $user
@@ -161,7 +157,7 @@ class Porto
         $class->login();
         return $class->send($filecontent);
     }
-    
+
     /**
      * Send a consultation for get ANTT protocol using key
      * @param string $user
@@ -176,7 +172,7 @@ class Porto
         $class->login();
         return $class->consult($chave, $protocolo);
     }
-    
+
     /**
      * Send message to webservice
      * @param array $post
@@ -185,7 +181,6 @@ class Porto
      */
     public function conn($post)
     {
-        $message = null;
         $oCurl = curl_init();
         curl_setopt($oCurl, CURLOPT_URL, $this->url);
         curl_setopt($oCurl, CURLOPT_SSL_VERIFYPEER, false);

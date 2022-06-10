@@ -17,11 +17,8 @@ namespace NFePHP\Averbacao;
  * @link      http://github.com/nfephp-org/sped-averbacao for the canonical source repository
  */
 
-use NFePHP\Common\Strings;
-use NFePHP\Common\Signer;
 use NFePHP\Averbacao\Common\Tools as ToolsCommon;
-use RuntimeException;
-use InvalidArgumentException;
+use NFePHP\Common\Strings;
 
 class Atm extends ToolsCommon
 {
@@ -29,7 +26,7 @@ class Atm extends ToolsCommon
      * @var string
      */
     public $cUsuario = '';
-    
+
     /**
      * @var string
      */
@@ -59,7 +56,7 @@ class Atm extends ToolsCommon
         $this->cCodigo = $cCodigo;
         $this->tpAmb = $tpAmb;
     }
- 
+
     /**
      * Request authorization to issue XML  in batch with one or more documents
      * @param $cXml of CTe or MDFe
@@ -106,22 +103,24 @@ class Atm extends ToolsCommon
             $this->cUrl = 'http://homologaws.averba.com.br/20/index.soap?wsdl';
             $this->cHost = 'homologaws.averba.com.br';
         }
+        $cXml = htmlentities($cXml);
         $request = "<$cTagAction>"
             . "<usuario>$this->cUsuario</usuario>"
             . "<senha>$this->cSenha</senha>"
             . "<codatm>$this->cCodigo</codatm>"
-            . "<$cTagXml><![CDATA[$cXml]]></$cTagXml>"
+            . "<$cTagXml>$cXml</$cTagXml>"
             . "</$cTagAction>";
         $request = Strings::clearXmlString($request, true);
-        $cXmlSoap     = '<?xml version="1.0" encoding="utf-8"?>';
-        $cXmlSoap    .= '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-						 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-						 xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+        $cXmlSoap = '<?xml version="1.0" encoding="utf-8"?>';
+        $cXmlSoap .= '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+						 xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
 						 xmlns:urn="urn:ATMWebSvr">';
-        $cXmlSoap    .= '<soapenv:Body>';
-        $cXmlSoap    .= $request;
-        $cXmlSoap    .= '</soapenv:Body>';
-        $cXmlSoap    .= '</soapenv:Envelope>';
+        $cXmlSoap .= '<soapenv:Body>';
+        $cXmlSoap .= $request;
+        $cXmlSoap .= '</soapenv:Body>';
+        $cXmlSoap .= '</soapenv:Envelope>';
+        $this->lastRequest = $cXmlSoap;
         $this->lastResponse = $this->sendRequest($cXmlSoap);
         return $this->lastResponse;
     }

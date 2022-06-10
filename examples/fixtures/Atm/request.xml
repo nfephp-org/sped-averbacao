@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:urn="urn:ATMWebSvr">
+    <soapenv:Body>
+        <averbaCTe>
+            <usuario>WS</usuario>
+            <senha>usuario</senha>
+            <codatm>sua_senha</codatm>
+            <xmlCTe>
+                xml
+        </infCTeSupl>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                <Reference URI="#CTe51220628125153000184570010000000831803406418">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                        <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                    <DigestValue>nwUjcJGlCmjRfnVM+c743OODCXo=</DigestValue>
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>
+                V62qis3PiCULV0F9+qJmmPmXsRaBM0FFJW3rrAPHfyD7rRqDTTOZfG/ZDi82T0lqcRekg3JSkX38XcFWWnDcqwLPPCrGzKhCOUrxhUY2H0Gr3V5wuk6jaRu+5AOCmPwlZA6ngW8/Ika2Cz1Nl7VH+kK/wuVUAfJjxKpl6hi7qMoyu6QVipPWJwK5XzKTMbq8WiPdsPK/0yLXM2Mtv7haZjA1PeVaoyuODOzx/G8Esvg5ykX4Y8SgGT5seeQaj2pqto2lMTf/C9063OWhHe05PcEBa/TJvJV5TCXwM+zSltrt9dPGepWljjil3ofuB5487yw/wFPXKPh1FLArT6mcYA==
+            </SignatureValue>
+            <KeyInfo>
+                <X509Data>
+                    <X509Certificate>
+                        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
+                    </X509Certificate>
+                </X509Data>
+            </KeyInfo>
+        </Signature>
+    </CTe>
+    <protCTe versao="3.00">
+        <infProt>
+            <tpAmb>1</tpAmb>
+            <verAplic>3.00</verAplic>
+            <chCTe>51220628125153000184570010000000831803406418</chCTe>
+            <dhRecbto>2022-06-10T09:37:44-04:00</dhRecbto>
+            <nProt>151220539988820</nProt>
+            <digVal>nwUjcJGlCmjRfnVM+c743OODCXo=</digVal>
+            <cStat>100</cStat>
+            <xMotivo>Autorizado o uso da CT-e</xMotivo>
+        </infProt>
+    </protCTe>
+</cteProc>]]></xmlCTe></averbaCTe></soapenv:Body></soapenv:Envelope>

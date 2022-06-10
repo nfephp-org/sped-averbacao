@@ -3,3 +3,4 @@
 /local
 ./composer.lock
 /.idea
+/composer.lock

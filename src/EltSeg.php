@@ -17,11 +17,7 @@ namespace NFePHP\Averbacao;
  * @link      http://github.com/nfephp-org/sped-averbacao for the canonical source repository
  */
 
-use NFePHP\Common\Strings;
-use NFePHP\Common\Signer;
 use NFePHP\Averbacao\Common\Tools as ToolsCommon;
-use RuntimeException;
-use InvalidArgumentException;
 
 class EltSeg extends ToolsCommon
 {
@@ -35,7 +31,7 @@ class EltSeg extends ToolsCommon
     public function __construct()
     {
     }
- 
+
     /**
      * Request authorization to issue XML  in batch with one or more documents
      * @param $cXml of CTe/MDFe or NFe
@@ -48,11 +44,9 @@ class EltSeg extends ToolsCommon
         if (empty($cXml)) {
             throw new \InvalidArgumentException('Um XML do (CTe,MDFe,NFe), protocolado deve ser passado.');
         }
-
-		$nSize = strlen($cXml);
-		$cUrl = "http://www.eltseg05.com.br/eltws/eltws.svc/FileUploadXML?FileName=$cFileName&CNPJ=$cCNPJ&Length=$nSize";
-		
-        $this->lastResponse = $this->sendRequestELTSEG($cUrl,$cXml);
+        $nSize = strlen($cXml);
+        $cUrl = "http://www.eltseg05.com.br/eltws/eltws.svc/FileUploadXML?FileName=$cFileName&CNPJ=$cCNPJ&Length=$nSize";
+        $this->lastResponse = $this->sendRequestELTSEG($cUrl, $cXml);
         return $this->lastResponse;
     }
 }

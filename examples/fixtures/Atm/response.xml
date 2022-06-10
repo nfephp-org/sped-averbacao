@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+    <SOAP-ENV:Body>
+        <ns1:averbaCTeResponse xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">
+            <Response>
+                <Filial></Filial>
+                <CNPJCli></CNPJCli>
+                <Erros>
+                    <Erro>
+                        <Codigo>904</Codigo>
+                        <Descricao>Acesso nao autorizado</Descricao>
+                    </Erro>
+                </Erros>
+            </Response>
+        </ns1:averbaCTeResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+    <?xml version="1.0" encoding="utf-8"?><SOAP-ENV:Envelope
+SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+    <SOAP-ENV:Fault>
+        <faultcode xsi:type="xsd:string">SOAP-ENV:Client</faultcode>
+        <faultactor xsi:type="xsd:string"></faultactor>
+        <faultstring xsi:type="xsd:string">error in msg parsing:
+            XML error parsing SOAP payload on line 4: Mismatched tag
+        </faultstring>
+        <detail xsi:type="xsd:string"></detail>
+    </SOAP-ENV:Fault>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+    <?xml version="1.0" encoding="utf-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                                                             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                                                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                                             xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+    <ns1:averbaCTeResponse xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">
+        <Response>
+            <Numero></Numero>
+            <Serie></Serie>
+            <Filial></Filial>
+            <Erros>
+                <Erro>
+                    <Codigo>912</Codigo>
+                    <Descricao>XML invalido para utilizacao neste webserver</Descricao>
+                </Erro>
+            </Erros>
+        </Response>
+    </ns1:averbaCTeResponse>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+    <?xml version="1.0" encoding="utf-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                                                             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                                                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                                             xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+    <ns1:averbaCTeResponse xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">
+        <Response>
+            <Numero>83</Numero>
+            <Serie>1</Serie>
+            <Filial></Filial>
+            <CNPJCli>28125153000184</CNPJCli>
+            <TpDoc>2</TpDoc>
+            <Averbado>
+                <dhAverbacao>2022-06-10T12:04:25</dhAverbacao>
+                <Protocolo>CUE4FQ52NI4XN47D18518D9Y6QQXS</Protocolo>
+                <DadosSeguro>
+                    <NumeroAverbacao>0651310222812515300018457001000000083120</NumeroAverbacao>
+                </DadosSeguro>
+            </Averbado>
+            <Infos>
+                <Info>
+                    <Codigo>001</Codigo>
+                    <Descricao>Documento ja averbado</Descricao>
+                </Info>
+            </Infos>
+        </Response>
+    </ns1:averbaCTeResponse>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+    <?xml version="1.0" encoding="utf-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                                                             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                                                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                                             xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+    <ns1:averbaCTeResponse xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">
+        <Response>
+            <Numero>1</Numero>
+            <Serie>3</Serie>
+            <Filial></Filial>
+            <CNPJCli>14491024000103</CNPJCli>
+            <TpDoc>6</TpDoc>
+            <Erros>
+                <Erro>
+                    <Codigo>033</Codigo>
+                    <Descricao>CNPJ emissor nao autorizado para averbar...</Descricao>
+                    <ValorInformado>014491024000103</ValorInformado>
+                </Erro>
+            </Erros>
+        </Response>
+    </ns1:averbaCTeResponse>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
