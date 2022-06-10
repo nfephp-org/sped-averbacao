@@ -17,8 +17,8 @@ Para login, enviar apenas os parâmetros:
 {
     "mod": "login",
     "comp": 5,
-    "user": "18605092000107",
-    "pass": "1860",
+    "user": "xxxxxxxxxxxxx",
+    "pass": "xxxxx",
     "dump": 1
 }
 
