@@ -22,9 +22,6 @@ Para login, enviar apenas os parâmetros:
     "dump": 1
 }
 
-18605092000107
-Senha: 1860
-
 dump: Pode ser utilizado em qualquer requisição à API para auxiliar na depuração. Exibe um “dump” de como estão chegando as variáveis enviadas ao sistema pelo usuário.
 dump=1: Adiciona a tag “dump” no json de resposta, após todo o processamento normal da requisição.
 dump=2: Exibe o json de resposta apenas com a tag “dump”, antes de qualquer processamento, e aborta o processamento normal.
