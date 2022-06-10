@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="iso-8859-1"?> 
+<lista> 
+  <erro> 
+    <codigo>000</codigo> 
+    <descricao>Erro de sistema</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>001</codigo> 
+    <descricao>Documento já Cadastrado</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>002</codigo> 
+    <descricao>Erro na inclusão do documento</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>003</codigo> 
+    <descricao>Não foi possível consistir o Limite por conter erro em Valores Contratáveis.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>004</codigo> 
+    <descricao>Valor da IS maior que o limite permitido.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>005</codigo> 
+    <descricao>O ramo não está cadastrado para o cliente CNPJ ou a vigência está fora do período.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>006</codigo> 
+    <descricao>A data inicial da vigência não é válida.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>007</codigo> 
+    <descricao>A data final da vigência não é válida.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>008</codigo> 
+    <descricao>A data de chancela não é válida. </descricao>  
+  </erro> 
+  <erro> 
+    <codigo>009</codigo> 
+    <descricao>A data de embarque não é válida. </descricao>  
+  </erro> 
+  <erro> 
+    <codigo>010</codigo> 
+    <descricao>Data/Hora de embarque fora dos limites estabelecidos na apólice. Obrigatório o averbamento antes do embarque.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>011</codigo> 
+    <descricao>Data/Hora de embarque fora dos limites estabelecidos na apólice. Existe quantidade máxima de horas para averbamento após embarque.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>012</codigo> 
+    <descricao>Limite de Avarias inválido.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>013</codigo> 
+    <descricao>Limite de Acessórios inválido.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>014</codigo> 
+    <descricao>Limite de Container inválido.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>015</codigo> 
+    <descricao>Limite inválido.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>016</codigo> 
+    <descricao>Tipo de Movimento deverá ser 1-Normal para Valor de Averbação maior que zero.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>017</codigo> 
+    <descricao>A data de Emissão não pode ser superior a data de Chancela.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>018</codigo> 
+    <descricao>A data de Embarque não pode ser inferior a data de Emissão.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>019</codigo> 
+    <descricao>Para o ramo 32-VI o percurso complementar não pode ficar vazio. Favor informar os dados do VI.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>020</codigo> 
+    <descricao>O CPF ou o RG do motorista deve ser informado.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>021</codigo> 
+    <descricao>Para o ramo 52-RCTAC não deverá existir taxa de OCD.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>022</codigo> 
+    <descricao>Para o ramo 52-RCTAC não deverá existir taxa de IC.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>023</codigo> 
+    <descricao>Para o ramo 52-RCTAC não deverá existir taxa de RI.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>024</codigo> 
+    <descricao>não foi possível consistir a apólice por conter erro no Ramo, Dt.Embarque, Hr.Embarque ou Dt.Chancela.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>025</codigo> 
+    <descricao>não foi possível consistir o Limite por conter erro em Valor da Mercadoria.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>026</codigo> 
+    <descricao>não foi possível consistir os dados de DDR por conter erro no Tipo de Documento.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>027</codigo> 
+    <descricao>apólice não localizada ou vencida para o ramo.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>028</codigo> 
+    <descricao>CNPJ/CPF do DDR inválido.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>029</codigo> 
+    <descricao>CNPJ do DDR inválido.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>030</codigo> 
+    <descricao>CPF do DDR inválido.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>031</codigo> 
+    <descricao>Erro na validação do cliente DDR.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>032</codigo> 
+    <descricao>Linha ignorada por conter caracter de controle inválido.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>033</codigo> 
+    <descricao>CNPJ emissor não autorizado para averbar.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>034</codigo> 
+    <descricao>Documento com data de Emissão inferior a 60 dias.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>035</codigo> 
+    <descricao>Seguradora obriga Averbação de conhecimento ou nota fiscal</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>036</codigo>
+    <descricao>Segurado não localizado na apólice do embarcador estipulante</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>037</codigo> 
+    <descricao>Documento já averbado na apolice do estipulante</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>038</codigo> 
+    <descricao>Documento já averbado na apolice TN do estipulante</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>039</codigo> 
+    <descricao>Localizado mais de um embarcador estipulante, utilize código de operação</descricao>  
+  </erro>
+  <erro> 
+    <codigo>040</codigo> 
+    <descricao>Embarcador não pode averbar conhecimento deve averbar nota fiscal</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>041</codigo> 
+    <descricao>Transportador não pode averbar nota fiscal na apolice do estipulante</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>044</codigo> 
+    <descricao>Erro de sistema</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>100</codigo> 
+    <descricao>Serie Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>101</codigo> 
+    <descricao>Número do Documento inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>102</codigo> 
+    <descricao>UF Origem Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>103</codigo> 
+    <descricao>UF Destino Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>104</codigo> 
+    <descricao>Informação de Urbano inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>105</codigo> 
+    <descricao>Tipo de Mercadoria Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>106</codigo> 
+    <descricao>Valor da Mercadoria Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>107</codigo> 
+    <descricao>Placa do Veiculo Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>108</codigo> 
+    <descricao>CPF do Motorista inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>109</codigo> 
+    <descricao>CNPJ do Segurado inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>110</codigo> 
+    <descricao>Taxa de OCD inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>111</codigo> 
+    <descricao>Taxa de IC inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>112</codigo> 
+    <descricao>Taxa de RI inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>114</codigo> 
+    <descricao>Transporte Próprio inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>115</codigo> 
+    <descricao>Data de Emissão Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>116</codigo> 
+    <descricao>Tipo de Documento inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>117</codigo> 
+    <descricao>Tipo de Transporte inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>118</codigo> 
+    <descricao>Tipo de Movimento inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>119</codigo> 
+    <descricao>Taxa de RCFDC Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>120</codigo> 
+    <descricao>Inf. de Percurso Complementar Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>121</codigo> 
+    <descricao>UF de Origem do Perc.Complementar Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>122</codigo> 
+    <descricao>UF de Destino do Perc.Complementar Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>123</codigo> 
+    <descricao>RG do Motorista inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>124</codigo> 
+    <descricao>Ramo inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>128</codigo> 
+    <descricao>Cod. de Liberação do Motorista inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>129</codigo> 
+    <descricao>Filial informada Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>130</codigo> 
+    <descricao>Inf. de Rastreado Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>131</codigo> 
+    <descricao>Inf. de Escolta Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>132</codigo> 
+    <descricao>OBS inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>133</codigo> 
+    <descricao>Valor do Container inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>134</codigo> 
+    <descricao>Valor de Acessorios inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>135</codigo> 
+    <descricao>Ve�culo por meios Próprios inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>138</codigo> 
+    <descricao>Data de Embarque inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>139</codigo> 
+    <descricao>Valor do Frete inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>140</codigo> 
+    <descricao>Valor de Despesas Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>141</codigo> 
+    <descricao>Valor de Imposto inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>142</codigo> 
+    <descricao>Valor de Lucro inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>143</codigo> 
+    <descricao>Cod. de Mercadoria Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>144</codigo> 
+    <descricao>Descrição de Mercadoria Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>145</codigo> 
+    <descricao>Descrição de Embalagem Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>146</codigo> 
+    <descricao>ora de Embarque Inválida</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>149</codigo> 
+    <descricao>CEP de Origem inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>150</codigo> 
+    <descricao>CEP de Destino inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>151</codigo> 
+    <descricao>CNPJ do DDR inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>160</codigo> 
+    <descricao>Tipo de Mercadoria Nova inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>161</codigo> 
+    <descricao>Tipo de Viagem inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>162</codigo> 
+    <descricao>Valor de Avarias inválido</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>200</codigo> 
+    <descricao>Serie Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>201</codigo> 
+    <descricao>Número do Documento Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>202</codigo> 
+    <descricao>UF Origem Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>203</codigo> 
+    <descricao>UF Destino Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>204</codigo> 
+    <descricao>Informação de Urbano Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>205</codigo> 
+    <descricao>Tipo de Mercadoria Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>206</codigo> 
+    <descricao>Valor da Mercadoria Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>207</codigo> 
+    <descricao>Placa do Veiculo Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>208</codigo> 
+    <descricao>CPF do Motorista Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>209</codigo> 
+    <descricao>CNPJ do Segurado Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>210</codigo> 
+    <descricao>Taxa de OCD Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>211</codigo> 
+    <descricao>Taxa de IC Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>212</codigo> 
+    <descricao>Taxa de RI Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>214</codigo> 
+    <descricao>Transporte Próprio Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>215</codigo> 
+    <descricao>Data de Emissão Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>216</codigo> 
+    <descricao>Tipo de Documento Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>217</codigo> 
+    <descricao>Tipo de Transporte Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>218</codigo> 
+    <descricao>Tipo de Movimento Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>219</codigo> 
+    <descricao>Taxa de RCFDC Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>220</codigo> 
+    <descricao>Inf. de Percurso Complementar Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>221</codigo> 
+    <descricao>UF de Origem do Perc.Complementar Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>222</codigo> 
+    <descricao>UF de Destino do Perc.Complementar Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>223</codigo> 
+    <descricao>RG do Motorista Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>224</codigo> 
+    <descricao>Ramo Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>228</codigo> 
+    <descricao>Cod. de Liberação do Motorista Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>229</codigo> 
+    <descricao>Filial informada Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>230</codigo> 
+    <descricao>Inf. de Rastreado Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>231</codigo> 
+    <descricao>Inf. de Escolta Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>232</codigo> 
+    <descricao>OBS Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>233</codigo> 
+    <descricao>Valor do Container Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>234</codigo> 
+    <descricao>Valor de Acessorios Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>235</codigo> 
+    <descricao>Ve�culo por meios Próprios Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>238</codigo> 
+    <descricao>Data de Embarque Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>239</codigo> 
+    <descricao>Valor do Frete Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>240</codigo> 
+    <descricao>Valor de Despesas Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>241</codigo> 
+    <descricao>Valor de Imposto Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>242</codigo> 
+    <descricao>Valor de Lucro Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>243</codigo> 
+    <descricao>Cod. de Mercadoria Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>244</codigo> 
+    <descricao>Descrição de Mercadoria Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>245</codigo> 
+    <descricao>Descrição de Embalagem Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>246</codigo> 
+    <descricao>Hora de Embarque Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>249</codigo> 
+    <descricao>CEP de Origem Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>250</codigo> 
+    <descricao>CEP de Destino Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>251</codigo> 
+    <descricao>CNPJ do DDR Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>260</codigo> 
+    <descricao>Tipo de Mercadoria Nova Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>261</codigo> 
+    <descricao>Tipo de Viagem Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>262</codigo> 
+    <descricao>Valor de Avarias Mandatório</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>333</codigo> 
+    <descricao>Valor do Container inválido e consta na apólice para o ramo.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>334</codigo> 
+    <descricao>Valor de Acessorios inválido e consta na apólice para o ramo.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>339</codigo> 
+    <descricao>Valor do Frete inválido e consta na apólice para o ramo.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>340</codigo> 
+    <descricao>Valor de Despesas inválido e consta na apólice para o ramo.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>341</codigo> 
+    <descricao>Valor de Imposto inválido e consta na apólice para o ramo.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>342</codigo> 
+    <descricao>Valor de Lucro inválido e consta na apólice para o ramo.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>362</codigo> 
+    <descricao>Valor de Avarias inválido e consta na apólice para o ramo.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>433</codigo> 
+    <descricao>Valor do Container acima do limite permitido para o ramo informado.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>434</codigo> 
+    <descricao>Valor de Acessorios acima do limite permitido para o ramo informado.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>439</codigo> 
+    <descricao>Valor do Frete acima do limite permitido para o ramo informado.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>440</codigo> 
+    <descricao>Valor de Despesas acima do limite permitido para o ramo informado.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>441</codigo> 
+    <descricao>Valor de Imposto acima do limite permitido para o ramo informado.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>442</codigo> 
+    <descricao>Valor de Lucro acima do limite permitido para o ramo informado.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>462</codigo> 
+    <descricao>Valor de Avarias acima do limite permitido para o ramo informado.</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>500</codigo> 
+    <descricao>Serie contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>501</codigo> 
+    <descricao>Número do Documento contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>502</codigo> 
+    <descricao>UF Origem contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>503</codigo> 
+    <descricao>UF Destino contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>504</codigo> 
+    <descricao>Informação de Urbano contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>505</codigo> 
+    <descricao>Tipo de Mercadoria contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>506</codigo> 
+    <descricao>Valor da Mercadoria contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>507</codigo> 
+    <descricao>Placa do Veiculo contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>508</codigo> 
+    <descricao>CPF do Motorista contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>509</codigo> 
+    <descricao>CNPJ do Segurado contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>510</codigo> 
+    <descricao>Taxa de OCD contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>511</codigo> 
+    <descricao>Taxa de IC contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>512</codigo> 
+    <descricao>Taxa de RI contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>514</codigo> 
+    <descricao>Transporte Próprio contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>515</codigo> 
+    <descricao>Data de Emissão contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>516</codigo> 
+    <descricao>Tipo de Documento contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>517</codigo> 
+    <descricao>Tipo de Transporte contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>518</codigo> 
+    <descricao>Tipo de Movimento contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>519</codigo> 
+    <descricao>Taxa de RCFDC contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>520</codigo> 
+    <descricao>Inf. de Percurso Complementar contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>521</codigo> 
+    <descricao>UF de Origem do Perc.Complementar contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>522</codigo> 
+    <descricao>UF de Destino do Perc.Complementar contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>523</codigo> 
+    <descricao>RG do Motorista contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>524</codigo> 
+    <descricao>Ramo contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>528</codigo> 
+    <descricao>Cod. de Liberação do Motorista contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>529</codigo> 
+    <descricao>Filial informada contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>530</codigo> 
+    <descricao>Inf. de Rastreado contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>531</codigo> 
+    <descricao>Inf. de Escolta contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>532</codigo> 
+    <descricao>OBS contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>533</codigo> 
+    <descricao>Valor do Container contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>534</codigo> 
+    <descricao>Valor de Acessorios contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>535</codigo> 
+    <descricao>Ve�culo por meios Próprios contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>538</codigo> 
+    <descricao>Data de Embarque contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>539</codigo> 
+    <descricao>Valor do Frete contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>540</codigo> 
+    <descricao>Valor de Despesas contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>541</codigo> 
+    <descricao>Valor de Imposto contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>542</codigo> 
+    <descricao>Valor de Lucro contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>543</codigo> 
+    <descricao>Cod. de Mercadoria contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>544</codigo> 
+    <descricao>Descrição de Mercadoria contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>545</codigo> 
+    <descricao>Descrição de Embalagem contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>546</codigo> 
+    <descricao>Hora de Embarque contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>549</codigo> 
+    <descricao>CEP de Origem contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>550</codigo> 
+    <descricao>CEP de Destino contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>551</codigo> 
+    <descricao>CNPJ do DDR contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>560</codigo> 
+    <descricao>Tipo de Mercadoria Nova contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>561</codigo> 
+    <descricao>Tipo de Viagem contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>562</codigo> 
+    <descricao>Valor de Avarias contendo caracteres inválidos</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>900</codigo> 
+    <descricao>Usu�rio do Webserver não informado</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>901</codigo> 
+    <descricao>Senha do Webserver não informado</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>902</codigo> 
+    <descricao>CodATM do Webserver não encontrado</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>903</codigo> 
+    <descricao>xmlDOC do Webserver não informado</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>904</codigo> 
+    <descricao>Acesso do Webserver não autorizado</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>905</codigo> 
+    <descricao>Erro ao ler XML</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>906</codigo> 
+    <descricao>Erro ao Submeter dados ao servidor</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>907</codigo> 
+    <descricao>Erro ao registrar cancelamento do CTe</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>908</codigo> 
+    <descricao>CTe não localizado na base de dados</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>909</codigo> 
+    <descricao>Cancelamento registrado com sucesso</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>910</codigo> 
+    <descricao>Erro ao registrar canelamento da NFe</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>911</codigo> 
+    <descricao>NFe não localizada na base de dados</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>912</codigo> 
+    <descricao>XML inválido para utilizacao neste webserver</descricao>  
+  </erro> 
+  <erro> 
+    <codigo>913</codigo> 
+    <descricao>Aplicação não informada</descricao>  
+  </erro>
+  <erro> 
+    <codigo>914</codigo> 
+    <descricao>Assunto não informado</descricao>  
+  </erro>
+  <erro> 
+    <codigo>915</codigo> 
+    <descricao>Remetente(s) não informado(s)</descricao>  
+  </erro>
+  <erro> 
+    <codigo>916</codigo> 
+    <descricao>Destinatário(s) não informado(s)</descricao>  
+  </erro>
+  <erro> 
+    <codigo>917</codigo> 
+    <descricao>Corpo do email não informado</descricao>  
+  </erro>
+  <erro> 
+    <codigo>918</codigo> 
+    <descricao>Erro ao registrar email</descricao>  
+  </erro>  
+  <erro> 
+    <codigo>919</codigo> 
+    <descricao>Terminal Desativado</descricao>  
+  </erro>
+  <erro> 
+    <codigo>920</codigo> 
+    <descricao>Terminal Bloqueado</descricao>  
+  </erro>
+</lista> 
