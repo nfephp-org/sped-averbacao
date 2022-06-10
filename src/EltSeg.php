@@ -45,7 +45,10 @@ class EltSeg extends ToolsCommon
             throw new \InvalidArgumentException('Um XML do (CTe,MDFe,NFe), protocolado deve ser passado.');
         }
         $nSize = strlen($cXml);
-        $cUrl = "http://www.eltseg05.com.br/eltws/eltws.svc/FileUploadXML?FileName=$cFileName&CNPJ=$cCNPJ&Length=$nSize";
+        $cUrl = "http://www.eltseg05.com.br/eltws/eltws.svc/FileUploadXML?"
+            . "FileName=$cFileName"
+            . "&CNPJ=$cCNPJ"
+            . "&Length=$nSize";
         $this->lastResponse = $this->sendRequestELTSEG($cUrl, $cXml);
         return $this->lastResponse;
     }
