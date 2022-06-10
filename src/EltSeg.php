@@ -17,9 +17,9 @@ namespace NFePHP\Averbacao;
  * @link      http://github.com/nfephp-org/sped-averbacao for the canonical source repository
  */
 
-use NFePHP\Averbacao\Common\Tools as ToolsCommon;
+use NFePHP\Averbacao\Common\Tools;
 
-class EltSeg extends ToolsCommon
+class EltSeg extends Tools
 {
     /**
      * Set Information

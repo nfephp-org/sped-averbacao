@@ -29,6 +29,10 @@ class SoapCurl
      */
     public $soaperror;
     /**
+     * @var integer
+     */
+    public $soaperror_code;
+    /**
      * @var string
      */
     public $soapinfo;
@@ -69,6 +73,7 @@ class SoapCurl
                 "User-Agent: Apache-HttpClient/4.1.1 (java 1.5)"]);
             $response = curl_exec($oCurl);
             $this->soaperror = curl_error($oCurl);
+            $this->soaperror_code = curl_errno($oCurl);
             $ainfo = curl_getinfo($oCurl);
             if (is_array($ainfo)) {
                 $this->soapinfo = $ainfo;
@@ -79,11 +84,11 @@ class SoapCurl
             throw SoapException::unableToLoadCurl($e->getMessage());
         }
         if ($this->soaperror != '') {
-            throw SoapException::soapFault($this->soaperror . " [$cUrl]");
+            throw SoapException::soapFault($this->soaperror . " [$cUrl]", $this->soaperror_code);
         }
         return $this->responseBody;
     }
-    
+
     /**
      * Send soap message to url
      * @param string $cUrl
@@ -110,7 +115,6 @@ class SoapCurl
             curl_close($oCurl);
             $response = str_replace('a:', '', $response);
             $this->responseBody = trim($response);
-            file_put_contents('response.xml', $response);
         } catch (\Exception $e) {
             throw SoapException::unableToLoadCurl($e->getMessage());
         }

@@ -2,6 +2,8 @@
 
 namespace NFePHP\Averbacao;
 
+use CURLFile;
+
 class Porto
 {
     public $debug = '';
@@ -205,7 +207,7 @@ class Porto
         curl_close($oCurl);
         if ($errno) {
             $message = curl_strerror($errno);
-            throw new \Exception($message);
+            throw new \Exception($message, $errno);
         }
         return $result;
     }

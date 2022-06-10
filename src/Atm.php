@@ -17,10 +17,10 @@ namespace NFePHP\Averbacao;
  * @link      http://github.com/nfephp-org/sped-averbacao for the canonical source repository
  */
 
-use NFePHP\Averbacao\Common\Tools as ToolsCommon;
+use NFePHP\Averbacao\Common\Tools;
 use NFePHP\Common\Strings;
 
-class Atm extends ToolsCommon
+class Atm extends Tools
 {
     /**
      * @var string
