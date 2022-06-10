@@ -24,5 +24,5 @@ try {
         echo "</pre>";
     }
  } catch (\Exception $e) {
-     echo "Ocorreu um erro: {$e->message}.";
+     echo "Ocorreu um erro: {$e->getMessage()}.";
  }

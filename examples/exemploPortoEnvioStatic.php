@@ -12,10 +12,11 @@ $pass = "1111";
 $filecontent = file_get_contents('cte.xml');
 
 try {
+    $averb = new Porto($user, $pass);
     $response = $averb->sendStatic($user, $pass, $filecontent);
     echo "<pre>";
     print_r($std);
     echo "</pre>";
 } catch (\Exception $e) {
-     echo "Ocorreu um erro: {$e->message}.";
+     echo "Ocorreu um erro: {$e->getMessage()}.";
 }

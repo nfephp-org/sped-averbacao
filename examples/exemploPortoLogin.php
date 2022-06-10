@@ -16,5 +16,5 @@ try {
         echo "Você está logado";
     }
 } catch (\Exception $e) {
-    echo $e->message;
+    echo $e->getMessage();
 }

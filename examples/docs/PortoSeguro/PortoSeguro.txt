@@ -1,0 +1,119 @@
+Averbação via API (Webservice tipo REST)
+https://docs.google.com/document/d/1da005UzBF1Wzm8LmiB4JJnaXaLXtFKgl6S_rErMlXF8/edit
+
+Resumo: Acessar a API (RPC) via método POST para Login (mesmo usuário e senha do Sistema Web) e receber o json de resposta e o cookie de sessão (portal[ses] - deve ser utilizado em múltiplos envios), acessar novamente para Enviar o arquivo e receber o json de resposta de processamento que irá conter o status e o Número de Averbação ANTT. O Sistema Web é apenas um programa em JavaScript acessando exatamente esta mesma API. Ou seja, todas as requisições e respostas podem ser observadas em pleno funcionamento via Ferramenta do Desenvolvedor de seu Navegador Web.
+
+Endereço da API: http://www.averbeporto.com.br/websys/php/conn.php
+
+Para login, enviar apenas os parâmetros:
+{
+    "mod": "login",
+    "comp": 5,
+    "user": "USUARIO",
+    "pass": "SENHA",
+    ["dump": [1,2]]    // Opcional.
+}
+
+{
+    "mod": "login",
+    "comp": 5,
+    "user": "18605092000107",
+    "pass": "1860",
+    "dump": 1
+}
+
+18605092000107
+Senha: 1860
+
+dump: Pode ser utilizado em qualquer requisição à API para auxiliar na depuração. Exibe um “dump” de como estão chegando as variáveis enviadas ao sistema pelo usuário.
+dump=1: Adiciona a tag “dump” no json de resposta, após todo o processamento normal da requisição.
+dump=2: Exibe o json de resposta apenas com a tag “dump”, antes de qualquer processamento, e aborta o processamento normal.
+
+Json de falha no login, usuário ou senha inválidos ou enviados de maneira incorreta:
+{
+    "success": 1,
+    "logout": 1
+}
+
+Json de login bem sucedido:
+{
+    "success": 1,
+    "C": {
+        "id": "00",
+        "userName": "USUARIO",
+        "name": "Usuario",
+        "email": "usuario@dominio.com",
+        "portal_groups_id": "00",
+        "type": "U"
+    },
+    "S":[...]
+}
+
+
+Para upload, fazer o POST do cookie de sessão (portal[ses] recebido no login), do arquivo (file) e dos parâmetros:
+{
+    "comp": 5,
+    "mod": "Upload",
+    "path": "eguarda/php/",
+    "recipient": "",
+    ["v": N]     //N = Versão da API. Parâmetro opcional.
+}
+
+Obs. Enviar o arquivo junto aos parâmetros, mesmo que codificado em base64, não irá funcionar. O arquivo deve ser enviado da mesma maneira que um formulário HTML o faria.
+
+Opções do parâmetro recipient (opcional, utilizar somente se assim indicado):
+Parâmetro que indica o tipo do(s) arquivo(s) sendo enviado(s). Necessário apenas nos casos indicados pela Seguradora.
+
+Vazio = Automático (Recomendado na grande maioria dos casos)
+E = Embarcador Emitente (Em desuso)
+F = Fornecedor (Em desuso)
+T = Transportador (Em desuso)
+D = Duplo Ramo (As NF-e são averbadas 2 vezes, uma como T e outra como E)
+
+
+Json de retorno:
+{
+    "success": 1,
+    "S": [
+            "P": 1, // Processado (xml guardado com sucesso)
+            "D": 0, // Duplicado (xml pré-existente)
+            "R": 0, // Rejeitado (xml não parece ser do tipo certo)
+            "N": 0 // Negado (Não é xml ou zip)
+    ]
+    "prot": "1234567890123", // Protocolos do XML guardados P
+    "prot": ["1234567890123"], // Protocolos dos XMLs (ZIP) guardados P
+    "error": [ // Mensagens de erro para os resultados R ou N
+            "code": 00,
+            "msg": "Mensagem de erro"
+      ]
+}
+
+
+
+Json de erro genérico, significa “Erro desconhecido” e, geralmente, é resultado de uma requisição mal formada ou efetuada via um método diferente de POST:
+{
+    "success": 0,
+    "error": {
+        "msg": "Ghs.loc.error"
+    }
+}
+
+Em caso de falha em arquivo ZIP, deve-se consultar o Relatório de Envios no sistema web para verificar os arquivos que foram guardados.
+
+Nas telas de Busca de Arquivos/Exportar para relatório ou Relatório/Registro de Envios é possível consultar o Número de Averbação ANTT (Protocolo de Envio) para os documentos guardados. [Sobre outras formas de consulta].
+
+O envio tem as mesmas características de um POST de formulário HTML (mídia application/x-www-form-urlencoded ou multipart/form-data).
+
+Exemplos CURL
+
+Login:
+curl 'http://www.averbeporto.com.br/websys/php/conn.php' --compressed -c cookie.txt -X POST -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' --data 'mod=login&comp=5&user=USUARIO&pass=SENHA' --compressed
+
+Upload:
+curl 'http://www.averbeporto.com.br/websys/php/conn.php' --compressed -X POST -H 'Cookie: portal[ses]=8c878b3ab2ba27bf7bc4d5d448b6489b' -H 'Content-Type: multipart/form-data' -F mod=Upload -F comp=5 -F path=eguarda/php/ -F file=@ARQUIVO.xml
+
+
+ps:
+USUARIO e SENHA devem ser substituídos pelo usuário (CNPJ) e senha do Segurado (mesmo usuário e senha do Sistema Web).
+O Cookie deve ser substituído pelo cookie retornado no login.
+O ARQUIVO.xml deve ser substituído por um documento XML (corretamente formatado) do Segurado.
