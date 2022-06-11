@@ -108,6 +108,7 @@ class SoapCurl
             curl_setopt($oCurl, CURLOPT_POSTFIELDS, $cXml);
             $response = curl_exec($oCurl);
             $this->soaperror = curl_error($oCurl);
+            $this->soaperror_code = curl_errno($oCurl);
             $ainfo = curl_getinfo($oCurl, CURLINFO_HTTP_CODE);
             if (is_array($ainfo)) {
                 $this->soapinfo = $ainfo;
@@ -119,7 +120,7 @@ class SoapCurl
             throw SoapException::unableToLoadCurl($e->getMessage());
         }
         if ($this->soaperror != '') {
-            throw SoapException::soapFault($this->soaperror . " [$cUrl]");
+            throw SoapException::soapFault($this->soaperror . " [$cUrl]", $this->soaperror_code);
         }
         return $this->responseBody;
     }
