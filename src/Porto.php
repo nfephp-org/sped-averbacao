@@ -112,6 +112,8 @@ class Porto
         $mime = mime_content_type($filename);
         $post['file'] = new CURLFile($filename, $mime);
         $response = $this->conn($post);
+        //remove uploaded file
+        unlink($filename);
         return $response;
     }
 
