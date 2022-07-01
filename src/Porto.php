@@ -14,6 +14,14 @@ class Porto
     protected $logged = false;
     protected $useragent = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.2) Gecko/20100101 Firefox/10.0.2';
     protected $url = 'https://apis.averbeporto.com.br/php/conn.php';
+    /**
+     * @var string
+     */
+    public $lastRequest;
+    /**
+     * @var string
+     */
+    public $lastResponse;
 
     /**
      * Construct
@@ -103,6 +111,7 @@ class Porto
             'cookie' => $this->cockie,
             'recipient' => ''
         ];
+        $this->lastRequest = json_encode($post);
         if ($this->environment != null) {
             $post['dump'] = $this->environment;
         }
@@ -200,8 +209,8 @@ class Porto
         }
         curl_setopt($oCurl, CURLOPT_POST, true);
         curl_setopt($oCurl, CURLOPT_POSTFIELDS, $post);
-
         $result = curl_exec($oCurl);
+        $this->lastResponse = $result;
         $errno = curl_errno($oCurl);
         $errmsg = curl_error($oCurl);
         $this->debug = curl_getinfo($oCurl);
