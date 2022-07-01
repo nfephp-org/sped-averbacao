@@ -1,0 +1,12 @@
+stdClass Object
+(
+    [success] => 1
+    [S] => stdClass Object
+        (
+            [P] => 1 // Processado (xml guardado com sucesso)
+            [D] => 0 // Duplicado (xml pré-existente)
+            [R] => 0 // Rejeitado (xml não parece ser do tipo certo)
+            [N] => 0 // Negado (Não é xml ou zip)
+        )
+    [prot] => 0588603230780110500019955055000151287062
+)

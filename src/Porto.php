@@ -7,14 +7,13 @@ use CURLFile;
 class Porto
 {
     public $debug = '';
-    protected $cc;
     protected $user;
     protected $pass;
     protected $cockie;
     protected $environment = null;
     protected $logged = false;
     protected $useragent = 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.2) Gecko/20100101 Firefox/10.0.2';
-    protected $url = 'https://www.averbeporto.com.br/websys/php/conn.php';
+    protected $url = 'https://apis.averbeporto.com.br/php/conn.php';
 
     /**
      * Construct
