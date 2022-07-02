@@ -110,3 +110,34 @@ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
     </ns1:averbaCTeResponse>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
+
+
+    <?xml version="1.0" encoding="utf-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                                                             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                                                             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                                             xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+    <ns1:averbaCTeResponse xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">
+        <Response>
+            <Numero>6340</Numero>
+            <Serie>2</Serie>
+            <Filial></Filial>
+            <CNPJCli>29917809000164</CNPJCli>
+            <TpDoc>2</TpDoc>
+            <Averbado>
+                <dhAverbacao>2022-07-02T16:44:58</dhAverbacao>
+                <Protocolo>DCC333522Y4VDOL118512R176ZSXT</Protocolo>
+                <DadosSeguro>
+                    <NumeroAverbacao>0660212222991780900016457002000006340112</NumeroAverbacao>
+                </DadosSeguro>
+            </Averbado>
+            <Infos>
+                <Info>
+                    <Codigo>001</Codigo>
+                    <Descricao>Documento ja averbado</Descricao>
+                </Info>
+            </Infos>
+        </Response>
+    </ns1:averbaCTeResponse>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -59,14 +59,14 @@ class Atm extends Tools
 
     /**
      * Request authorization to issue XML  in batch with one or more documents
-     * @param $cXml of CTe or MDFe
+     * @param $cXml string CTe or MDFe
      * @param int $cTipo of type CTE,MDFe or NFe
      * @return string soap response xml
      */
     public function averbaXml($cXml, $cTipo)
     {
         if (empty($cXml)) {
-            throw new \InvalidArgumentException('Um XML do (CTe,MDFe,NFe), protocolado deve ser passado.');
+            throw new \InvalidArgumentException('Um XML do (CTe, MDFe, NFe), protocolado deve ser passado.');
         }
         if (empty($this->cUsuario)) {
             throw new \InvalidArgumentException('O usuário da AT&M deve ser passado.');

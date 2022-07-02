@@ -11,7 +11,7 @@ class DocumentsException extends \InvalidArgumentException implements ExceptionI
         4 => "O documento de resposta relata um erro {{msg}}.",
         5 => "Os documentos se referem a diferentes objetos. {{msg}}.",
         6 => "O argumento passado não é um XML válido.",
-        7 => "Este xml não pertence ao projeto SPED-NFe.",
+        7 => "Este xml não pertence ao projeto SPED-Averbação.",
         8 => "A configuração (config.json) não é válido {{msg}}.",
         9 => "Falta o CSC no config.json.",
         10 => "Falta o CSCId no config.json.",
@@ -22,13 +22,13 @@ class DocumentsException extends \InvalidArgumentException implements ExceptionI
         15 => "Um TXT de NFe deve ser passado como parâmetro, e nada foi passado.",
         16 => "O txt tem um campo não definido {{msg}}"
     ];
-    
+
     public static function wrongDocument($code, $msg = '')
     {
         $msg = self::replaceMsg(self::$list[$code], $msg);
         return new static($msg);
     }
-    
+
     private static function replaceMsg($input, $msg)
     {
         return str_replace('{{msg}}', $msg, $input);

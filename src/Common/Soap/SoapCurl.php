@@ -60,8 +60,8 @@ class SoapCurl
             curl_setopt($oCurl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($oCurl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
             curl_setopt($oCurl, CURLOPT_HEADER, 0);
-            curl_setopt($oCurl, CURLOPT_TIMEOUT, 5);
-            curl_setopt($oCurl, CURLOPT_CONNECTTIMEOUT, 5);
+            curl_setopt($oCurl, CURLOPT_TIMEOUT, 30);
+            curl_setopt($oCurl, CURLOPT_CONNECTTIMEOUT, 30);
             curl_setopt($oCurl, CURLOPT_POST, 1);
             curl_setopt($oCurl, CURLOPT_POSTFIELDS, $cXmlSoap);
             curl_setopt($oCurl, CURLOPT_HTTPHEADER, [
