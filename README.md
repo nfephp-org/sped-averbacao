@@ -23,7 +23,7 @@ Framework para comunicação e averbação dos CTes, MDFes e NFes com as segurad
 
 - ELTSEG ( em produção )
 
-- Porto Seguro (em testes ALPHA, o envio ainda não foi testado)
+- Porto Seguro ( em produção )
 
 
 *Caso alguém tenha outras necessidades favor entrar em contato.*
