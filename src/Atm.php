@@ -103,12 +103,11 @@ class Atm extends Tools
             $this->cUrl = 'http://homologaws.averba.com.br/20/index.soap?wsdl';
             $this->cHost = 'homologaws.averba.com.br';
         }
-        $cXml = htmlentities($cXml);
         $request = "<$cTagAction>"
             . "<usuario>$this->cUsuario</usuario>"
             . "<senha>$this->cSenha</senha>"
             . "<codatm>$this->cCodigo</codatm>"
-            . "<$cTagXml>$cXml</$cTagXml>"
+            . "<$cTagXml><![CDATA[$cXml]]></$cTagXml>"
             . "</$cTagAction>";
         $request = Strings::clearXmlString($request, true);
         $cXmlSoap = '<?xml version="1.0" encoding="utf-8"?>';
