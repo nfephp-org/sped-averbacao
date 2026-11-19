@@ -21,6 +21,8 @@ Framework para comunicação e averbação dos CTes, MDFes e NFes com as segurad
 
 - AT&M ( em produção )
 
+- Averbei ( em produção )
+
 - ELTSEG ( em produção )
 
 - Porto Seguro ( em produção )
